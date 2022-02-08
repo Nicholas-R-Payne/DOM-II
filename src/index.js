@@ -45,6 +45,14 @@ function escKey(evt) {
 
 document.addEventListener('keydown', escKey);
 
+// resize event
+
+function reportSize() {
+    alert(`The window has been resized to ${window.innerWidth} x ${window.innerHeight}`);
+}
+
+window.addEventListener('resize', reportSize);
+
 // wheel event
 
 
@@ -52,9 +60,6 @@ document.addEventListener('keydown', escKey);
 
 
 // focus event
-
-
-// resize event
 
 
 // select event
