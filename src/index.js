@@ -78,7 +78,7 @@ window.addEventListener('copy', () => {
 
 // 10. wheel event for header image
 
-const logo = document.querySelector('header img');
+const headerImage = document.querySelector('header img');
 
 let scale = 1;
 
@@ -90,4 +90,4 @@ function zoomImage(evt) {
     this.style.transform = `scale(${scale})`;
 }
 
-logo.addEventListener('wheel', zoomImage);
+headerImage.addEventListener('wheel', zoomImage);
