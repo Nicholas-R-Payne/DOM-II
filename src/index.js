@@ -45,7 +45,7 @@ function escKey(evt) {
 
 document.addEventListener('keydown', escKey);
 
-// load event
+// load event for window
 
 function pageLoad() {
     console.log('The page has loaded successfully!');
@@ -53,7 +53,7 @@ function pageLoad() {
 
 window.addEventListener('load', pageLoad);
 
-// resize event
+// resize event for window
 
 function reportSize() {
     console.log(`The window has been resized to ${window.innerWidth} x ${window.innerHeight}`);
@@ -61,7 +61,20 @@ function reportSize() {
 
 window.addEventListener('resize', reportSize);
 
-// wheel event
+// wheel event for header image
+
+const logo = document.querySelector('header img');
+
+let scale = 1;
+
+function zoomImage(evt) {
+    evt.preventDefault();
+    scale += evt.deltaY * -0.001;
+    scale = Math.min(Math.max(.125, scale), 1);
+    this.style.transform = `scale(${scale})`;
+}
+
+logo.addEventListener('wheel', zoomImage);
 
 
 // focus event
