@@ -35,8 +35,15 @@ function removeHighlight() {
 document.querySelectorAll('nav a').forEach(link => link.addEventListener('mouseout', removeHighlight));
 
 
-// keydown event
+// keydown event for escape key
 
+function escKey(evt) {
+    if (evt.key === 'Escape') {
+        alert('There is no escape!');
+    }
+}
+
+document.addEventListener('keydown', escKey);
 
 // wheel event
 
