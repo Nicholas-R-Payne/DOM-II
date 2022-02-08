@@ -45,18 +45,23 @@ function escKey(evt) {
 
 document.addEventListener('keydown', escKey);
 
+// load event
+
+function pageLoad() {
+    console.log('The page has loaded successfully!');
+}
+
+window.addEventListener('load', pageLoad);
+
 // resize event
 
 function reportSize() {
-    alert(`The window has been resized to ${window.innerWidth} x ${window.innerHeight}`);
+    console.log(`The window has been resized to ${window.innerWidth} x ${window.innerHeight}`);
 }
 
 window.addEventListener('resize', reportSize);
 
 // wheel event
-
-
-// load event
 
 
 // focus event
