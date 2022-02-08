@@ -1,6 +1,6 @@
 import './less/index.less'
 
-// click event for buttons
+// 1. click event for buttons
 
 function signUp() {
     alert("Congratulations! You're signed up!");
@@ -8,7 +8,7 @@ function signUp() {
 
 document.querySelectorAll('.btn').forEach(button => button.addEventListener('click', signUp));
 
-// dblclick event for background color
+// 2. dblclick event for background color
 
 const siteBody = document.querySelector('body');
 
@@ -18,7 +18,7 @@ function bgColorChange() {
 
 siteBody.addEventListener('dblclick', bgColorChange);
 
-// mouseover event for nav items
+// 3. mouseover event for nav items
 
 function highlight() {
     this.style.backgroundColor = "#FDFF47";
@@ -26,7 +26,7 @@ function highlight() {
 
 document.querySelectorAll('nav a').forEach(link => link.addEventListener('mouseover', highlight));
 
-// mouseout event for nav items
+// 4. mouseout event for nav items
 
 function removeHighlight() {
     this.style.backgroundColor = "white";
@@ -35,7 +35,7 @@ function removeHighlight() {
 document.querySelectorAll('nav a').forEach(link => link.addEventListener('mouseout', removeHighlight));
 
 
-// keydown event for escape key
+// 5. keydown event for escape key
 
 function escKey(evt) {
     if (evt.key === 'Escape') {
@@ -45,7 +45,7 @@ function escKey(evt) {
 
 document.addEventListener('keydown', escKey);
 
-// load event for window
+// 6. load event for window
 
 function pageLoad() {
     console.log('The page has loaded successfully!');
@@ -53,7 +53,13 @@ function pageLoad() {
 
 window.addEventListener('load', pageLoad);
 
-// resize event for window
+// 7. contextmenu event for window
+
+window.addEventListener('contextmenu', () => {
+    console.log('You opened the context menu!');
+});
+
+// 8. resize event for window
 
 function reportSize() {
     console.log(`The window has been resized to ${window.innerWidth} x ${window.innerHeight}`);
@@ -61,7 +67,7 @@ function reportSize() {
 
 window.addEventListener('resize', reportSize);
 
-// copy event for window
+// 9. copy event for window
 
 window.addEventListener('copy', () => {
     navigator.clipboard.readText()
@@ -70,7 +76,7 @@ window.addEventListener('copy', () => {
     });
 });
 
-// wheel event for header image
+// 10. wheel event for header image
 
 const logo = document.querySelector('header img');
 
@@ -85,6 +91,3 @@ function zoomImage(evt) {
 }
 
 logo.addEventListener('wheel', zoomImage);
-
-
-// select event
