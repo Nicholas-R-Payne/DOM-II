@@ -61,6 +61,15 @@ function reportSize() {
 
 window.addEventListener('resize', reportSize);
 
+// copy event for window
+
+window.addEventListener('copy', () => {
+    navigator.clipboard.readText()
+    .then (text => {
+        console.log(`You copied the text: ${text}`);
+    });
+});
+
 // wheel event for header image
 
 const logo = document.querySelector('header img');
@@ -68,6 +77,7 @@ const logo = document.querySelector('header img');
 let scale = 1;
 
 function zoomImage(evt) {
+    // preventDefault to prevent page from scrolling while zooming
     evt.preventDefault();
     scale += evt.deltaY * -0.001;
     scale = Math.min(Math.max(.125, scale), 1);
@@ -75,9 +85,6 @@ function zoomImage(evt) {
 }
 
 logo.addEventListener('wheel', zoomImage);
-
-
-// focus event
 
 
 // select event
